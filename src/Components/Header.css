@@ -1,0 +1,48 @@
+.navbar ul {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  list-style-type: none;
+}
+
+.navbar ul li a {
+  color: #ffffff;
+  font-size: 18px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between; /* Distribute space between child elements */
+  align-items: center; /* Vertically center items */
+  padding: 10px 20px;
+  gap: 50px;
+  height: 60px;
+  position: fixed; /* Sticks the header to the top */
+  top: 20px;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+
+header img {
+  width: 210px;
+  height: auto;
+}
+
+input[type="text"] {
+  float: right;
+  padding: 20px;
+  border: none;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 20px;
+  background-color: #07045a;
+  border-radius: 50px;
+  width: 300px;
+}
+
+input::placeholder {
+  opacity: 0.7;
+  font-size: 20px;
+  color: rgb(233, 228, 228);
+}

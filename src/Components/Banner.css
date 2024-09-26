@@ -1,0 +1,86 @@
+.banner h1 {
+  font-size: 48px;
+  font-family: "Playfair Display";
+  color: #ffffff;
+  width: 85%;
+  line-height: 1.5em;
+  text-align: left;
+  margin-top: 120px;
+  padding-bottom: 16px;
+}
+
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.banner img {
+  width: 450px;
+}
+
+.card-banner p {
+  font-family: "Playfair Display";
+  font-size: 30px;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.card-outer {
+  display: flex;
+  justify-content: flex-start;
+  gap: 30px;
+}
+.card-banner img {
+  width: 300px;
+}
+
+.card-banner {
+  background: radial-gradient(
+    circle,
+    #03133d 33%,
+    rgba(56, 32, 161, 0.07) 100%
+  );
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.12); /* Soft shadow */
+  border-radius: 20px; /* Rounded corners */
+  border: 1px solid #3f4475;
+  padding: 20px;
+}
+.card-inner {
+  gap: 20px;
+  font-family: "Playfair Display";
+  display: flex;
+  flex-direction: column;
+}
+.card-banner-two {
+  display: flex;
+  gap: 20px;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(
+    circle,
+    #03133d 33%,
+    rgba(56, 32, 161, 0.07) 100%
+  );
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.12); /* Soft shadow */
+  border-radius: 20px; /* Rounded corners */
+  border: 1px solid #3f4475;
+  padding: 20px;
+  height: 200px;
+}
+.card-banner-two p {
+  font-family: "Playfair Display";
+  font-size: 24px;
+}
+.card-banner-two img {
+  width: 200px;
+}
+
+.card-banner-two .arrow {
+  width: 40px;
+  height: auto;
+  background-color: #262b5c;
+  border-radius: 50%;
+  padding: 20px 10px;
+}
