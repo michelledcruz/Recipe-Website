@@ -1,6 +1,6 @@
 #root {
-  max-width: 1680px;
-  /* width: 100%; */
+  /* max-width: 1680px; */
+  width: 100%;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -11,19 +11,20 @@ body {
   margin: 0;
   padding: 0;
   /* height: 100vh; */
-  background: linear-gradient(135deg, #27355a 33%, #0b071d 100%);
+  background: linear-gradient(55deg, #27355a 33%, #0b071d 100%);
   font-family: "Poppins";
 }
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  width: 100%;
-}
 
-@media (max-width: 768px) {
-  .container {
-    max-width: 100%; /* Full width on smaller screens */
-    padding: 0 10px; /* Less padding on smaller screens */
-  }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Playfair Display";
+}
+.container {
+  width: 100%;
+  max-width: 1680px;
+  margin: 0 auto;
 }
