@@ -1,9 +1,10 @@
 import "./Header.css";
+import logo from "../assets/logo.svg";
 
 const Header = () => {
   return (
     <header>
-      <img src="./src/assets/logo.svg"></img>
+      <img src={logo}></img>
       <nav className="navbar">
         <ul>
           <li>
@@ -21,7 +22,7 @@ const Header = () => {
         </ul>
       </nav>
       <div>
-        <input type="text" placeholder="Search Recipe ..." />
+        <input type="text" placeholder="Search.." />
       </div>
     </header>
   );

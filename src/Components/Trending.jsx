@@ -1,6 +1,7 @@
 import "./Trending.css";
 import { useState, useEffect } from "react";
 import Slider from "react-slick";
+import { Link } from "react-router-dom";
 
 const Trending = () => {
   const [meals, setMeals] = useState([]);
@@ -8,6 +9,7 @@ const Trending = () => {
 
   const api_url =
     "https://www.themealdb.com/api/json/v1/1/filter.php?a=Mexican";
+  console.log("ehyy");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -49,16 +51,25 @@ const Trending = () => {
     ],
   };
 
+  const handleCardClick = (idMeal) => {
+    navigate(`/recipe/${idMeal}`); // Programmatically navigate to the recipe details page
+  };
+
   return (
     <div>
       <h2>Our current main dishes️</h2>
       <div className="trending-area">
         <Slider {...settings}>
           {meals.map((meal) => (
-            <div className="card-banner" key={meal.idMeal}>
+            <Link
+              to={`/recipe/${meal.idMeal}`} // Navigate to the respective recipe page
+              key={meal.idMeal}
+              className="card-banner"
+              onClick={() => handleCardClick(meal.idMeal)}
+            >
               <img src={meal.strMealThumb} />
               <p>{meal.strMeal}</p>
-            </div>
+            </Link>
           ))}
         </Slider>
       </div>

@@ -15,7 +15,7 @@ h2 {
 
 .card-banner {
   text-align: center;
-  max-width: 320px;
+  max-width: 300px;
   min-height: 400px;
   display: flex !important;
   flex-direction: column;
