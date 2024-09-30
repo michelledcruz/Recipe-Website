@@ -21,6 +21,7 @@ State management is handled with the useState hook to store fetched data such as
 6. Routing with React Router
 The app uses react-router-dom for client-side routing.
 Users can navigate between different pages without reloading the app. Each recipe has its own URL that links to its specific details page.
+7. Shimmer UI (Skeleton Loading): A shimmer or skeleton UI is shown while the recipe data is being fetched, providing a smooth user experience.
 
 # Technologies Used
 React: JavaScript library for building user interfaces.
