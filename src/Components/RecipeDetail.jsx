@@ -48,6 +48,12 @@ const RecipeDetail = () => {
           <img src={details.strMealThumb} alt={details.strMeal} />
         </div>
       </div>
+      <div className="video-section">
+        <a href={details.strYoutube} target="_blank" rel="noopener noreferrer">
+          <img src="../src/assets/video.png" />
+          <p>Watch Video </p>
+        </a>
+      </div>
       <div className="details">
         <h3>Steps to follow:</h3>
         <p>{details.strInstructions}</p>

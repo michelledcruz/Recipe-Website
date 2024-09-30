@@ -3,6 +3,9 @@
   grid-template-columns: 1fr 1fr;
   align-items: center;
 }
+.recipe-area .text-area h1 {
+  color: #f3ebe5;
+}
 .recipe-area h3 {
   font-family: "Poppins";
   color: #fc953b;
@@ -52,4 +55,21 @@
 .img-area img {
   width: 500px;
   border-radius: 15px;
+}
+
+.video-section img {
+  width: 50px;
+  height: 50px;
+}
+.video-section p {
+  font-size: 28px;
+  color: #ffffff;
+}
+.video-section p:hover {
+  color: #fc953b;
+}
+.video-section a {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
