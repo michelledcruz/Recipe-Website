@@ -46,8 +46,10 @@ const Banner = () => {
                 </Link>
               </div>
               <div className="card-banner-two">
-                <img className="arrow" src="./src/assets/Arrow.png" />
-                <p>Find Our More Recipies...</p>
+                <Link to="/allrecipes">
+                  <img className="arrow" src="./src/assets/Arrow.png" />
+                  <p>Find Our More Recipies...</p>
+                </Link>
               </div>
             </div>
           </div>

@@ -1,0 +1,32 @@
+h1 {
+  color: #fc953b;
+}
+.all-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+}
+.category-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.category-list ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  list-style-type: none;
+  padding-bottom: 40px;
+  padding-top: 40px;
+}
+.category-list li {
+  font-size: 23px;
+  padding: 10px 20px;
+  border: 1px solid grey;
+  border-radius: 12px;
+}
+.category-list li:hover {
+  background-color: #fc953b;
+  color: rgb(14, 14, 107);
+  cursor: pointer;
+}
