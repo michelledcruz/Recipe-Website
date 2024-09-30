@@ -1,20 +1,24 @@
 import "./AllRecipe.css";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Shimmer from "./Shimmer";
 
 const AllRecipe = () => {
   const [recipes, setRecipes] = useState([]);
   const [category, setCategory] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("Dessert");
+  const [loading, setLoading] = useState(true);
 
   // Function to fetch recipes based on category
   const fetchRecipes = async (category) => {
     try {
+      setLoading(true); // Set loading to true before fetching data
       const response = await fetch(
         `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`
       );
       const data = await response.json();
       setRecipes(data.meals);
+      setLoading(false); // Set loading to false after data is fetched
     } catch (error) {
       console.error("Error fetching recipes:", error);
     }
@@ -59,19 +63,21 @@ const AllRecipe = () => {
         </ul>
       </div>
       <div className="all-list">
-        {recipes &&
-          recipes.map((recipe) => (
-            <Link
-              to={`/recipe/${recipe.idMeal}`}
-              key={recipe.idMeal}
-              onClick={() => handleCardClick(recipe.idMeal)}
-            >
-              <div className="card-banner" key={recipe.idMeal}>
-                <img src={recipe.strMealThumb} />
-                <p>{recipe.strMeal} </p>
-              </div>{" "}
-            </Link>
-          ))}
+        {loading
+          ? // Show shimmer while loading
+            [...Array(6)].map((_, index) => <Shimmer key={index} />)
+          : recipes.map((recipe) => (
+              <Link
+                to={`/recipe/${recipe.idMeal}`}
+                key={recipe.idMeal}
+                onClick={() => handleCardClick(recipe.idMeal)}
+              >
+                <div className="card-banner" key={recipe.idMeal}>
+                  <img src={recipe.strMealThumb} alt={recipe.strMeal} />
+                  <p>{recipe.strMeal}</p>
+                </div>
+              </Link>
+            ))}
       </div>
     </div>
   );

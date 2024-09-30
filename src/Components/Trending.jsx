@@ -57,7 +57,7 @@ const Trending = () => {
   return (
     <div>
       <h2>Our current main dishes️</h2>
-      <div className="trending-area">
+      <div className="trending-area fade-in">
         <Slider {...settings}>
           {meals.map((meal) => (
             <Link
