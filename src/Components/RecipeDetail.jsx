@@ -30,24 +30,29 @@ const RecipeDetail = () => {
   if (!details) return <div>Loading...</div>;
 
   return (
-    <div className="recipe-area">
-      <div className="text-area">
-        <h6>{details.strArea}</h6>
-        <h1>{details.strMeal}</h1>
-        <div className="indgreient">
-          <h3>Ingredients:</h3>
-          <ul>
-            {ingredients.map((ingredient, index) => (
-              <li key={index}>{ingredient}</li>
-            ))}
-          </ul>
+    <>
+      <div className="recipe-area">
+        <div className="text-area">
+          <h3>{details.strArea}</h3>
+          <h1>{details.strMeal}</h1>
+          <div className="indgreient">
+            <h3>Ingredients:</h3>
+            <ul>
+              {ingredients.map((ingredient, index) => (
+                <li key={index}>{ingredient}</li>
+              ))}
+            </ul>
+          </div>
         </div>
+        <div className="img-area">
+          <img src={details.strMealThumb} alt={details.strMeal} />
+        </div>
+      </div>
+      <div className="details">
+        <h3>Steps to follow:</h3>
         <p>{details.strInstructions}</p>
       </div>
-      <div className="img-area">
-        <img src={details.strMealThumb} alt={details.strMeal} />
-      </div>
-    </div>
+    </>
   );
 };
 

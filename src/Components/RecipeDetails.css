@@ -3,20 +3,34 @@
   grid-template-columns: 1fr 1fr;
   align-items: center;
 }
+.recipe-area h3 {
+  font-family: "Poppins";
+  color: #fc953b;
+  font-weight: 800;
+  font-size: 23px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.details {
+  text-align: left;
+  font-size: 24px;
+}
+.details h3 {
+  font-family: "Poppins";
+  color: #fc953b;
+  font-weight: 800;
+  padding-top: 32px;
+  font-size: 23px;
+}
 .indgreient {
-  border-radius: 16px;
+  border-radius: 20px;
   background: linear-gradient(
     to right,
     rgba(16, 46, 100, 0) 0%,
     rgba(15, 46, 100, 0.13) 33%,
     rgba(10, 15, 47, 0.97) 100%
   );
-  box-shadow: linear-gradient(
-    to right,
-    rgba(16, 46, 100, 0) 0%,
-    rgba(15, 46, 100, 0.13) 33%,
-    rgba(10, 15, 47, 0.97) 100%
-  );
+  border: 1px solid #ffffff59;
   border-radius: 20px;
   padding: 30px;
 }
@@ -28,8 +42,12 @@
   gap: 10px;
   padding-left: 0;
 }
+.indgreient ul li {
+  font-size: 24px;
+}
 .text-area {
   text-align: left;
+  font-size: 20px;
 }
 .img-area img {
   width: 500px;

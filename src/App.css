@@ -13,6 +13,7 @@ body {
   /* height: 100vh; */
   background: linear-gradient(55deg, #27355a 33%, #0b071d 100%);
   font-family: "Poppins";
+  padding-top: 80px;
 }
 
 h1,

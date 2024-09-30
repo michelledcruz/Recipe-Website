@@ -9,7 +9,6 @@ const Trending = () => {
 
   const api_url =
     "https://www.themealdb.com/api/json/v1/1/filter.php?a=Mexican";
-  console.log("ehyy");
 
   useEffect(() => {
     const fetchData = async () => {
