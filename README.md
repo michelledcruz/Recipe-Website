@@ -1,7 +1,7 @@
 # Recipe Application
 This project is a React-based recipe application that allows users to browse recipes by category and view detailed information about each recipe, including videos on how to prepare them. The app fetches data from the MealDB API and displays it dynamically in the user interface.
 
-#Features
+# Features
 1. Recipe List by Category
 Users can view a list of recipe categories, fetched from the API.
 Clicking on a category filters the recipes displayed on the page.
@@ -22,7 +22,7 @@ State management is handled with the useState hook to store fetched data such as
 The app uses react-router-dom for client-side routing.
 Users can navigate between different pages without reloading the app. Each recipe has its own URL that links to its specific details page.
 
-#Technologies Used
+# Technologies Used
 React: JavaScript library for building user interfaces.
 React Router: Handles routing in the application.
 CSS Modules: Styles are written as CSS modules to keep the styling modular and scoped to components.
