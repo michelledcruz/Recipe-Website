@@ -4,11 +4,13 @@ import logo from "../assets/logo.svg";
 const Header = () => {
   return (
     <header>
-      <img src={logo}></img>
+      <a href="/">
+        <img src={logo} alt="Logo" />
+      </a>
       <nav className="navbar">
         <ul>
           <li>
-            <a href="#home">Home</a>
+            <a href="/">Home</a>
           </li>
           <li>
             <a href="#recipes">Recipes</a>
