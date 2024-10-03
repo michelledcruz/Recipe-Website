@@ -1,21 +1,23 @@
 import "./DisplayAllRecipe.css";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const DisplayAllRecipe = () => {
   const [recipes, setRecipes] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const [loading, setLoading] = useState(false); // To handle loading state
+  const [loading, setLoading] = useState(false);
+  const throttleTimeout = useRef(null); // Use useRef to store throttle timeout
+
+  const api_url = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
 
   // API to fetch data
   const fetchRecipes = async (query = "") => {
     try {
       setLoading(true); // Show loading before fetching data
-      const api_url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`;
-      const res = await fetch(api_url);
+      const res = await fetch(`${api_url}${query}`);
       const data = await res.json();
       setRecipes(data.meals || []); // Set an empty array if no meals are found
-      setLoading(false); // Set loading to false after data is fetched
+      setLoading(false);
     } catch (error) {
       console.error("Error fetching recipes:", error);
       setLoading(false);
@@ -27,20 +29,19 @@ const DisplayAllRecipe = () => {
     fetchRecipes();
   }, []);
 
-  // Fetch recipes when the search input changes
-  useEffect(() => {
-    if (searchTerm.trim() === "") {
-      // If the search term is empty, fetch all recipes
-      fetchRecipes();
-    } else {
-      // If the search term is provided, fetch filtered results
-      fetchRecipes(searchTerm);
-    }
-  }, [searchTerm]);
-
-  // Handle the search input change
+  // Handle throttling of search input
   const handleSearch = (event) => {
-    setSearchTerm(event.target.value);
+    const { value } = event.target;
+    setSearchTerm(value);
+
+    if (throttleTimeout.current) {
+      clearTimeout(throttleTimeout.current); // Clear the previous timeout if still active
+    }
+
+    // Set a new timeout to delay the API call until user stops typing
+    throttleTimeout.current = setTimeout(() => {
+      fetchRecipes(value);
+    }, 500); // 500ms delay
   };
 
   return (
