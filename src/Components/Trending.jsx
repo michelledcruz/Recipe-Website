@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 
 const Trending = () => {
   const [meals, setMeals] = useState([]);
-  //   const [loading, setLoading] = useState(false);
 
   const api_url =
     "https://www.themealdb.com/api/json/v1/1/filter.php?a=Mexican";

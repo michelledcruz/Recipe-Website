@@ -1,6 +1,7 @@
 import Header from "./Components/Header";
 import Banner from "./Components/Banner";
 import Trending from "./Components/Trending";
+import DisplayAllRecipe from "./Components/DisplayAllRecipe";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -13,6 +14,7 @@ const Home = () => {
     <>
       <Banner />
       <Trending />
+      <DisplayAllRecipe />
     </>
   );
 };
