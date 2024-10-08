@@ -18,10 +18,11 @@ The navigation bar is responsive and easy to use, making it simple for users to 
 5. Dynamic Data Fetching with useEffect and useState Hooks
 The app utilizes the useEffect hook to fetch data from the MealDB API and dynamically render recipes and categories.
 State management is handled with the useState hook to store fetched data such as recipe categories and individual meals.
-6. Routing with React Router
+6. Implemented Search Functionality: Search recipies from api list
+7. Routing with React Router
 The app uses react-router-dom for client-side routing.
 Users can navigate between different pages without reloading the app. Each recipe has its own URL that links to its specific details page.
-7. Shimmer UI (Skeleton Loading): A shimmer or skeleton UI is shown while the recipe data is being fetched, providing a smooth user experience.
+8. Shimmer UI (Skeleton Loading): A shimmer or skeleton UI is shown while the recipe data is being fetched, providing a smooth user experience.
 
 # Technologies Used
 React: JavaScript library for building user interfaces.
