@@ -18,7 +18,7 @@ The navigation bar is responsive and easy to use, making it simple for users to 
 5. Dynamic Data Fetching with useEffect and useState Hooks
 The app utilizes the useEffect hook to fetch data from the MealDB API and dynamically render recipes and categories.
 State management is handled with the useState hook to store fetched data such as recipe categories and individual meals.
-6. Implemented Search Functionality: Search recipies from api list
+6. Implemented Search Functionality: Search recipies from api list. Handle throttling of search input to avoid api calling on each keyword press.
 7. Routing with React Router
 The app uses react-router-dom for client-side routing.
 Users can navigate between different pages without reloading the app. Each recipe has its own URL that links to its specific details page.
