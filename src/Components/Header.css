@@ -3,8 +3,11 @@
   flex-direction: row;
   gap: 50px;
   list-style-type: none;
+  align-items: center;
 }
-
+button {
+  border: 1px solid #646cff !important;
+}
 .navbar ul li a {
   color: #ffffff;
   font-size: 18px;
