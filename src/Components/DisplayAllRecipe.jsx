@@ -16,6 +16,7 @@ const DisplayAllRecipe = () => {
       setLoading(true); // Show loading before fetching data
       const res = await fetch(`${api_url}${query}`);
       const data = await res.json();
+      console.log(data);
       setRecipes(data.meals || []); // Set an empty array if no meals are found
       setLoading(false);
     } catch (error) {

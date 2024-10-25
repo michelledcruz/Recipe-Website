@@ -1,4 +1,4 @@
-import { StrictMode } from "react";
+import { FavouritesProvider } from "./Context/FavoritesContext";
 import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
@@ -12,6 +12,8 @@ createRoot(document.getElementById("root")).render(
       redirect_uri: window.location.origin,
     }}
   >
-    <App />
+    <FavouritesProvider>
+      <App />
+    </FavouritesProvider>
   </Auth0Provider>
 );
