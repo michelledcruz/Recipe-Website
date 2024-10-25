@@ -1,7 +1,6 @@
-// FavoriteList.js
 import { useNavigate, Link } from "react-router-dom";
 import { useFavourites } from "../Context/FavoritesContext";
-import "./AllRecipe.css"; // Reuse styles if needed
+import "./AllRecipe.css";
 
 const FavoriteList = () => {
   const { favourites } = useFavourites();
@@ -19,17 +18,18 @@ const FavoriteList = () => {
       ) : (
         <div className="all-list">
           {favourites.map((recipe) => (
-            <div key={recipe.idMeal} className="recipe-card">
+            <Link
+              to={`/recipe/${recipe.idMeal}`}
+              key={recipe.idMeal}
+              className="recipe-card"
+            >
               <div onClick={() => handleCardClick(recipe.idMeal)}>
                 <div className="card-banner">
                   <img src={recipe.strMealThumb} alt={recipe.strMeal} />
                   <p>{recipe.strMeal}</p>
                 </div>
               </div>
-              <Link to={`/recipe/${recipe.idMeal}`}>
-                <button>View Recipe</button>
-              </Link>
-            </div>
+            </Link>
           ))}
         </div>
       )}
