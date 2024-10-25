@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import RecipeDetail from "./Components/RecipeDetail";
 import AllRecipe from "./Components/AllRecipe";
+import FavouriteList from "./Components/FavouriteList";
 import "./App.css";
 
 const Home = () => {
@@ -29,6 +30,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/recipe/:idMeal" element={<RecipeDetail />} />
             <Route path="/allrecipes" element={<AllRecipe />} />
+            <Route path="/favourites" element={<FavouriteList />} />
           </Routes>
         </div>
       </Router>

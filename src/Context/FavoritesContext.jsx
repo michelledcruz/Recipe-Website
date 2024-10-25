@@ -1,33 +1,29 @@
-import { createContext, useState, useContext } from "react";
+import { createContext, useContext, useState } from "react";
 
 const FavouritesContext = createContext();
+
+export const useFavourites = () => useContext(FavouritesContext);
 
 export const FavouritesProvider = ({ children }) => {
   const [favourites, setFavourites] = useState([]);
 
   const addFavourite = (recipe) => {
-    setFavourites((prevFavourites) => [...prevFavourites, recipe]);
+    setFavourites((prev) => [...prev, recipe]);
   };
 
-  const removeFavourite = (recipeId) => {
-    setFavourites((prevFavourites) =>
-      prevFavourites.filter((recipe) => recipe.id !== recipeId)
-    );
+  const removeFavourite = (idMeal) => {
+    setFavourites((prev) => prev.filter((item) => item.idMeal !== idMeal));
   };
 
-  const isFavourite = (recipeId) => {
-    return favourites.some((recipe) => recipe.id === recipeId); // Adjusted to use `favourites`
+  const isFavourite = (idMeal) => {
+    return favourites.some((item) => item.idMeal === idMeal);
   };
 
   return (
     <FavouritesContext.Provider
-      value={{ favourites, addFavourite, removeFavourite, isFavourite }} // Ensure consistent naming
+      value={{ favourites, addFavourite, removeFavourite, isFavourite }}
     >
       {children}
     </FavouritesContext.Provider>
   );
-};
-
-export const useFavourites = () => {
-  return useContext(FavouritesContext);
 };

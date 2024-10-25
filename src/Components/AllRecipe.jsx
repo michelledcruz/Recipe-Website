@@ -1,8 +1,8 @@
 import "./AllRecipe.css";
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom"; // Make sure to include useNavigate
+import { Link, useNavigate } from "react-router-dom";
 import Shimmer from "./Shimmer";
-import { useFavourites } from "../Context/FavoritesContext"; // Ensure this path is correct
+import { useFavourites } from "../Context/FavoritesContext";
 
 const AllRecipe = () => {
   const [recipes, setRecipes] = useState([]);
@@ -10,25 +10,23 @@ const AllRecipe = () => {
   const [selectedCategory, setSelectedCategory] = useState("Dessert");
   const [loading, setLoading] = useState(true);
   const { addFavourite, removeFavourite, isFavourite } = useFavourites();
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate();
 
-  // Function to fetch recipes based on category
   const fetchRecipes = async (category) => {
     try {
-      setLoading(true); // Set loading to true before fetching data
+      setLoading(true);
       const response = await fetch(
         `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`
       );
       const data = await response.json();
-      setRecipes(data.meals || []); // Default to an empty array if no meals
-      setLoading(false); // Set loading to false after data is fetched
+      setRecipes(data.meals || []);
+      setLoading(false);
     } catch (error) {
       console.error("Error fetching recipes:", error);
-      setLoading(false); // Ensure loading is false on error
+      setLoading(false);
     }
   };
 
-  // Function to fetch categories
   const fetchCategories = async () => {
     try {
       const res = await fetch(
@@ -43,23 +41,19 @@ const AllRecipe = () => {
   };
 
   useEffect(() => {
-    fetchCategories(); // Fetch categories when component mounts
-    fetchRecipes(selectedCategory); // Fetch recipes based on the initial category
+    fetchCategories();
+    fetchRecipes(selectedCategory);
   }, [selectedCategory]);
 
   const handleCategoryClick = (cat) => {
     setSelectedCategory(cat);
   };
 
-  const handleCardClick = (idMeal) => {
-    navigate(`/recipe/${idMeal}`); // Programmatically navigate to the recipe details page
-  };
-
   const handleFavoriteClick = (recipe) => {
     if (isFavourite(recipe.idMeal)) {
-      removeFavourite(recipe.idMeal); // Remove from favorites if already favorited
+      removeFavourite(recipe.idMeal);
     } else {
-      addFavourite(recipe.idMeal); // Add to favorites if not favorited
+      addFavourite(recipe);
     }
   };
 
@@ -78,19 +72,15 @@ const AllRecipe = () => {
       </div>
       <div className="all-list">
         {loading
-          ? // Show shimmer while loading
-            [...Array(6)].map((_, index) => <Shimmer key={index} />)
+          ? [...Array(6)].map((_, index) => <Shimmer key={index} />)
           : recipes.map((recipe) => (
               <div key={recipe.idMeal} className="recipe-card">
-                <Link
-                  to={`/recipe/${recipe.idMeal}`}
-                  onClick={() => handleCardClick(recipe.idMeal)}
-                >
+                <div onClick={() => navigate(`/recipe/${recipe.idMeal}`)}>
                   <div className="card-banner">
                     <img src={recipe.strMealThumb} alt={recipe.strMeal} />
                     <p>{recipe.strMeal}</p>
                   </div>
-                </Link>
+                </div>
                 <button onClick={() => handleFavoriteClick(recipe)}>
                   {isFavourite(recipe.idMeal)
                     ? "Remove from Favorites"

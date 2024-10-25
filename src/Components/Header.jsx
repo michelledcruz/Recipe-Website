@@ -20,7 +20,7 @@ const Header = () => {
             <Link to="/allrecipes">Recipes</Link>
           </li>
           <li>
-            <Link to="#favorites">Favorites</Link>
+            <Link to="/favourites">Favorites</Link>
           </li>
           <li>
             <Link to="#contact">Contact</Link>
